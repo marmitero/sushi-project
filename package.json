@@ -8,6 +8,7 @@
     "prepare:assets": "node scripts/prepare-assets.mjs",
     "dev": "npm run prepare:assets && vite --host 0.0.0.0 --port 5173",
     "build": "npm run prepare:assets && tsc --noEmit && vite build",
+    "build:portable": "npm run prepare:assets && tsc --noEmit && vite build --outDir portable/www --emptyOutDir",
     "preview": "vite preview --host 0.0.0.0 --port 4173",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",

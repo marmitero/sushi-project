@@ -14,6 +14,7 @@
 | Cena da torre + HUD + assets reais | ✅ Implementado |
 | Compras (andar/upgrade/caixa) | ✅ Implementado + Testado |
 | Persistência local + offline | ✅ Implementado + Testado |
+| Versão portátil Windows (JOGAR.bat + PowerShell) | ✅ Implementado + Verificado |
 | Funcionários c/ efeito econômico | ⏳ FASE 3 |
 | Elevador/entregas como sistema | ⏳ FASE 3 |
 | Configurações/acessibilidade | ⏳ FASE 4 |

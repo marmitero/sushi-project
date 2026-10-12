@@ -91,6 +91,12 @@ manifest.ui = ui;
 
 fs.writeFileSync(path.join(OUT, 'manifest.json'), JSON.stringify(manifest, null, 2));
 
+// Também emite uma cópia importável no build (sem fetch em runtime).
+const genDir = path.join(root, 'src', 'generated');
+ensureDir(genDir);
+fs.writeFileSync(path.join(genDir, 'manifest.json'), JSON.stringify(manifest));
+console.log('[prepare-assets] manifest.json (public) + src/generated/manifest.json gerados.');
+
 // Validação: nenhum arquivo referenciado pode estar ausente.
 const missing = [];
 function check(url) {

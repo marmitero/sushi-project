@@ -18,6 +18,18 @@ npm run test       # vitest (núcleo econômico)
 npm run typecheck
 ```
 
+## Jogar no Windows sem instalar nada (portátil)
+
+```bash
+npm run build:portable   # gera portable/www (jogo compilado + assets)
+```
+
+Depois, na sua máquina Windows, basta **duplo clique em `portable/JOGAR.bat`**:
+ele usa o PowerShell nativo para servir `portable/www/` em `http://localhost:8080/`
+e abre o navegador. Detalhes em `portable/LEIA-ME.txt`.
+(Observação: não há toolchain aqui para gerar um `.exe` Windows nativo; o `.bat`+PowerShell
+cumpre o papel de executável sem exigir nenhuma instalação.)
+
 ## Estrutura
 
 - `src/core/` — economia pura e testável (big, balance, economy, save).

@@ -6,6 +6,16 @@
 - Hospedagem estática (qualquer CDN/host). Sem backend no MVP.
 - Live preview de desenvolvimento: Vite `--host 0.0.0.0` + `allowedHosts:true` (necessário p/ proxy do Arena).
 
+## Portátil p/ testes manuais no Windows (sem instalar nada)
+
+- `npm run build:portable` → `portable/www/` (jogo compilado + assets, ~13 MB).
+- `portable/JOGAR.bat` + `portable/server.ps1`: servidor HTTP estático via **PowerShell nativo**
+  (HttpListener, portas 8080–8090 auto), abre o navegador e serve o jogo. Nenhuma dependência.
+- Não é um `.exe` nativo (sem toolchain de cross-compilação no ambiente de build); o `.bat`
+  cumpre o papel de executável "abrir e jogar". Ver `portable/LEIA-ME.txt`.
+- O manifest de assets é **embutido no bundle** (`src/generated/manifest.json` importado em
+  `BootScene`), eliminando `fetch` em runtime; as imagens são servidas via HTTP local.
+
 ## PWA (opcional, FASE 11)
 
 - Manifest + service worker p/ instalação no navegador (offline do shell; assets cacheados).

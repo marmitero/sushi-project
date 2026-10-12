@@ -2,6 +2,12 @@
 
 Formato: data · fase · alteração · verificação.
 
+## 2026-10-12 — Versão portátil p/ testes manuais no Windows
+
+- `npm run build:portable` → `portable/www/`; `portable/JOGAR.bat` + `server.ps1` servem o jogo via PowerShell nativo (sem instalar nada) e abrem o navegador.
+- Manifest de assets agora **embutido no bundle** (`src/generated/manifest.json`), sem `fetch` em runtime.
+- Verificação: typecheck limpo · 15/15 testes · build portátil ok · `portable/www` servido localmente (index/js/png 200).
+
 ## 2026-10-12 — FASE 0 + FASE 1/2 (MVP)
 
 - Auditoria completa de `sprites/` (559 PNG, dimensões/fps verificados) + correções sobre `referencia_tecnica.md` (Lv0=trancado; atlas Spine baixa-res; logo embutido; sem popups separados).

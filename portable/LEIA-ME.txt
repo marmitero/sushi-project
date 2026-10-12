@@ -1,0 +1,30 @@
+SUSHIVENTURE IDLE TYCOON — VERSÃO PORTÁVEL PARA WINDOWS
+========================================================
+
+COMO JOGAR (sem instalar nada):
+  1. Dê um duplo clique em  JOGAR.bat
+  2. O navegador abrirá automaticamente em  http://localhost:8080/
+  3. Mantenha a janela preta aberta enquanto joga.
+  4. Para sair, feche a janela preta (ou Ctrl+C nela).
+
+O QUE ACONTECE:
+  - O JOGAR.bat usa o PowerShell que já vem no Windows para servir a pasta
+    www/ (o jogo já compilado, com todos os assets) em http://localhost.
+  - Nenhuma dependência, Node ou internet são necessários para rodar
+    (apenas para carregar as fontes do Google na primeira vez).
+
+SE A PORTA 8080 ESTIVER EM USO:
+  - O servidor tenta automaticamente portas 8080..8090 e abre a correta.
+
+TESTES MANUAIS SUGERIDOS:
+  - Veja a torre com o térreo/caixa (logo SUSHI TOWER) e 1 andar.
+  - Toque em "Novo andar" para desbloquear (desconta dinheiro e sobe a torre).
+  - Toque na seta de um andar para melhorá-lo (troca o sprite Lv1..Lv10).
+  - Toque no botão laranja "Caixa L2.." para melhorar o caixa (troca o storefront).
+  - Arraste para cima/baixo para rolar a torre.
+  - Recarregue a página: o progresso deve ser preservado (save local).
+  - Feche e reabra depois: popup de ganhos offline aparece uma única vez.
+
+PROBLEMAS COMUNS:
+  - Se o Windows avisar sobre o script, permita a execução (é um servidor local).
+  - Tela preta/sem assets: garante que a pasta www/ está ao lado do JOGAR.bat.

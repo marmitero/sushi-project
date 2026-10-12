@@ -1,6 +1,6 @@
 import Phaser from 'phaser';
 import { GameModel } from './model';
-import { AssetManifest } from './BootScene';
+import { ASSETS, AssetManifest } from './BootScene';
 import { fmt, gte } from '../core/big';
 import { BALANCE as B } from '../core/balance';
 
@@ -30,7 +30,7 @@ export class TowerScene extends Phaser.Scene {
   }
 
   create() {
-    this.M = this.game.registry.get('manifest') as AssetManifest;
+    this.M = ASSETS;
     this.model = new GameModel();
 
     // Fundo (espaço de tela, não rola).
