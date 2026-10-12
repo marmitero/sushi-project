@@ -1,0 +1,24 @@
+{
+  "name": "sushiventure-idle-tycoon",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Sushiventure Idle Tycoon — idle/tycoon de restaurante de sushi com torre vertical. Web primeiro, Android depois.",
+  "type": "module",
+  "scripts": {
+    "prepare:assets": "node scripts/prepare-assets.mjs",
+    "dev": "npm run prepare:assets && vite --host 0.0.0.0 --port 5173",
+    "build": "npm run prepare:assets && tsc --noEmit && vite build",
+    "preview": "vite preview --host 0.0.0.0 --port 4173",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "phaser": "^3.85.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4",
+    "vite": "^5.4.8",
+    "vitest": "^2.1.1"
+  }
+}
