@@ -1,8 +1,8 @@
 # AI_STATE — Sushiventure Idle Tycoon
 
 **Atualizado:** 2026-10-12 · **Fase atual:** 1/2 (MVP jogável) — FASE 0 concluída
-**Branch:** `arena/71ec9a3a-sushi-project` · **Último commit:** `3f9fe8e`
-**Push:** ✅ `origin/arena/71ec9a3a-sushi-project` (new branch) em 2026-10-12
+**Branch:** `arena/71ec9a3a-sushi-project` · **Último commit:** `bf8b78b`
+**Push:** ✅ `origin/arena/71ec9a3a-sushi-project` em 2026-10-12
 
 ## Status dos sistemas
 
