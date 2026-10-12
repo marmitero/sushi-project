@@ -1,0 +1,19 @@
+Lift Guy.png
+size:128,64
+filter:Linear,Linear
+pma:true
+Body
+bounds:2,19,33,43
+offsets:1,1,36,46
+HandL
+bounds:74,36,21,12
+offsets:1,0,24,13
+HandR
+bounds:2,2,21,15
+offsets:2,2,24,20
+Head
+bounds:37,21,35,41
+offsets:1,2,37,45
+Leg
+bounds:74,50,28,12
+offsets:2,2,31,15

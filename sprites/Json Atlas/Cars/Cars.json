@@ -1,0 +1,1371 @@
+{
+"skeleton": {
+	"hash": "yXrvYUrz+GM",
+	"spine": "4.2.43",
+	"x": -115.5,
+	"y": 92.32,
+	"width": 227.13,
+	"height": 165.04,
+	"images": "./Images/",
+	"audio": "./audio"
+},
+"bones": [
+	{ "name": "root" },
+	{ "name": "Cars", "parent": "root", "x": 3.91, "y": 180.57 },
+	{ "name": "Shade", "parent": "root", "x": -1.02, "y": 122.67 },
+	{ "name": "Tire1", "parent": "root", "x": -64.88, "y": 121.29 },
+	{ "name": "Fx", "parent": "Tire1", "x": -0.58, "y": -6.51 },
+	{ "name": "Tire2", "parent": "root", "x": 53.91, "y": 121.29 },
+	{ "name": "Fx2", "parent": "Tire2", "x": -0.58, "y": -6.51 }
+],
+"slots": [
+	{ "name": "Shade", "bone": "Shade", "attachment": "Shade" },
+	{ "name": "Tire", "bone": "Tire1", "attachment": "Tire" },
+	{ "name": "Tire2", "bone": "Tire2", "attachment": "Tire" },
+	{ "name": "TireFx", "bone": "Fx", "attachment": "TireFx" },
+	{ "name": "TireFx2", "bone": "Fx2", "attachment": "TireFx" },
+	{ "name": "Car1", "bone": "Cars", "attachment": "Car1" },
+	{ "name": "Car2", "bone": "Cars" },
+	{ "name": "Car3", "bone": "Cars" },
+	{ "name": "Car4", "bone": "Cars" },
+	{ "name": "Car5", "bone": "Cars" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"Car1": {
+				"Car1": { "x": -9.41, "y": 4.79, "width": 220, "height": 144 }
+			},
+			"Car2": {
+				"Car2": { "x": -4.72, "width": 218, "height": 139 }
+			},
+			"Car3": {
+				"Car3": { "y": -0.67, "width": 228, "height": 136 }
+			},
+			"Car4": {
+				"Car4": { "x": -17.53, "y": -2.7, "width": 188, "height": 137 }
+			},
+			"Car5": {
+				"Car5": { "x": -6.07, "y": -1.35, "width": 220, "height": 140 }
+			},
+			"Shade": {
+				"Shade": { "x": 0.65, "y": 0.65, "width": 224, "height": 62 }
+			},
+			"Tire": {
+				"Tire": { "x": 0.42, "y": -0.52, "width": 50, "height": 49 }
+			},
+			"Tire2": {
+				"Tire": { "x": 0.42, "y": -0.52, "width": 50, "height": 49 }
+			},
+			"TireFx": {
+				"TireFx": { "x": 0.48, "y": -11.13, "width": 26, "height": 14 }
+			},
+			"TireFx2": {
+				"TireFx": { "x": 0.48, "y": -11.13, "width": 26, "height": 14 }
+			}
+		}
+	}
+],
+"animations": {
+	"Car1_Idle": {
+		"bones": {
+			"Cars": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"translate": [
+					{},
+					{ "time": 0.3333, "y": -3.5 },
+					{ "time": 0.6667 }
+				],
+				"scale": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				]
+			},
+			"Shade": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"translate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"scale": [
+					{},
+					{ "time": 0.3333, "x": 1.069, "y": 1.069 },
+					{ "time": 0.6667 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				]
+			},
+			"Tire1": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"translate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"scale": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				]
+			},
+			"Fx": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"translate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"scale": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				]
+			},
+			"Fx2": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"translate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"scale": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				]
+			},
+			"Tire2": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"translate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"scale": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				]
+			}
+		}
+	},
+	"Car1_Move": {
+		"bones": {
+			"Fx": {
+				"rotate": [
+					{},
+					{ "time": 0.3333, "value": 87.22 },
+					{ "time": 0.6667, "value": 180.56 },
+					{ "time": 1, "value": 268.79 },
+					{ "time": 1.3333, "value": 357.4 }
+				],
+				"translate": [
+					{},
+					{ "time": 0.3333, "x": 4.03 },
+					{ "time": 0.6667, "x": 0.4, "y": 3.33 },
+					{ "time": 1, "x": -3.84, "y": 1.51 },
+					{ "time": 1.3333, "x": 0.7, "y": 0.3 }
+				],
+				"scale": [
+					{},
+					{ "time": 0.3333, "x": 0.662 },
+					{ "time": 0.6667, "x": 0.973 },
+					{ "time": 1, "x": 0.604 },
+					{ "time": 1.3333, "x": 0.929 }
+				],
+				"shear": [
+					{}
+				]
+			},
+			"Cars": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667, "curve": "stepped" },
+					{ "time": 1.3333 }
+				],
+				"translate": [
+					{},
+					{ "time": 0.3333, "y": -4.78 },
+					{ "time": 0.6667 },
+					{ "time": 1, "y": -4.78 },
+					{ "time": 1.3333 }
+				],
+				"scale": [
+					{},
+					{ "time": 0.3333, "y": 0.982 },
+					{ "time": 0.6667 },
+					{ "time": 1, "y": 0.982 },
+					{ "time": 1.3333 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667, "curve": "stepped" },
+					{ "time": 1.3333 }
+				]
+			},
+			"Shade": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667, "curve": "stepped" },
+					{ "time": 1.3333 }
+				],
+				"translate": [
+					{ "y": 3.49 },
+					{ "time": 0.3333, "y": -1.58 },
+					{ "time": 0.6667, "y": 3.49 },
+					{ "time": 1, "y": -1.58 },
+					{ "time": 1.3333, "y": 3.49 }
+				],
+				"scale": [
+					{},
+					{ "time": 0.3333, "x": 1.053 },
+					{ "time": 0.6667 },
+					{ "time": 1, "x": 1.053 },
+					{ "time": 1.3333 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667, "curve": "stepped" },
+					{ "time": 1.3333 }
+				]
+			},
+			"Fx2": {
+				"rotate": [
+					{},
+					{ "time": 0.3333, "value": 87.22 },
+					{ "time": 0.6667, "value": 180.56 },
+					{ "time": 1, "value": 268.79 },
+					{ "time": 1.3333, "value": 357.4 }
+				],
+				"translate": [
+					{},
+					{ "time": 0.3333, "x": 4.03 },
+					{ "time": 0.6667, "x": 0.4, "y": 3.33 },
+					{ "time": 1, "x": -3.84, "y": 1.51 },
+					{ "time": 1.3333, "x": 0.7, "y": 0.3 }
+				],
+				"scale": [
+					{},
+					{ "time": 0.3333, "x": 0.662 },
+					{ "time": 0.6667, "x": 0.973 },
+					{ "time": 1, "x": 0.604 },
+					{ "time": 1.3333, "x": 0.929 }
+				],
+				"shear": [
+					{}
+				]
+			}
+		}
+	},
+	"Car2_Idle": {
+		"slots": {
+			"Car1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Car2": {
+				"attachment": [
+					{ "name": "Car2" }
+				]
+			}
+		},
+		"bones": {
+			"Cars": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"translate": [
+					{},
+					{ "time": 0.3333, "y": -3.5 },
+					{ "time": 0.6667 }
+				],
+				"scale": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				]
+			},
+			"Shade": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"translate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"scale": [
+					{},
+					{ "time": 0.3333, "x": 1.069, "y": 1.069 },
+					{ "time": 0.6667 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				]
+			},
+			"Tire1": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"translate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"scale": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				]
+			},
+			"Fx": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"translate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"scale": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				]
+			},
+			"Fx2": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"translate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"scale": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				]
+			},
+			"Tire2": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"translate": [
+					{ "x": 11.98, "curve": "stepped" },
+					{ "time": 0.6667, "x": 11.98 }
+				],
+				"scale": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				]
+			}
+		}
+	},
+	"Car2_Move": {
+		"slots": {
+			"Car1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Car2": {
+				"attachment": [
+					{ "name": "Car2" }
+				]
+			}
+		},
+		"bones": {
+			"Fx": {
+				"rotate": [
+					{},
+					{ "time": 0.3333, "value": 87.22 },
+					{ "time": 0.6667, "value": 180.56 },
+					{ "time": 1, "value": 268.79 },
+					{ "time": 1.3333, "value": 357.4 }
+				],
+				"translate": [
+					{},
+					{ "time": 0.3333, "x": 4.03 },
+					{ "time": 0.6667, "x": 0.4, "y": 3.33 },
+					{ "time": 1, "x": -3.84, "y": 1.51 },
+					{ "time": 1.3333, "x": 0.7, "y": 0.3 }
+				],
+				"scale": [
+					{},
+					{ "time": 0.3333, "x": 0.662 },
+					{ "time": 0.6667, "x": 0.973 },
+					{ "time": 1, "x": 0.604 },
+					{ "time": 1.3333, "x": 0.929 }
+				],
+				"shear": [
+					{}
+				]
+			},
+			"Cars": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667, "curve": "stepped" },
+					{ "time": 1.3333 }
+				],
+				"translate": [
+					{},
+					{ "time": 0.3333, "y": -4.78 },
+					{ "time": 0.6667 },
+					{ "time": 1, "y": -4.78 },
+					{ "time": 1.3333 }
+				],
+				"scale": [
+					{},
+					{ "time": 0.3333, "y": 0.982 },
+					{ "time": 0.6667 },
+					{ "time": 1, "y": 0.982 },
+					{ "time": 1.3333 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667, "curve": "stepped" },
+					{ "time": 1.3333 }
+				]
+			},
+			"Shade": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667, "curve": "stepped" },
+					{ "time": 1.3333 }
+				],
+				"translate": [
+					{ "y": 3.49 },
+					{ "time": 0.3333, "y": -1.58 },
+					{ "time": 0.6667, "y": 3.49 },
+					{ "time": 1, "y": -1.58 },
+					{ "time": 1.3333, "y": 3.49 }
+				],
+				"scale": [
+					{},
+					{ "time": 0.3333, "x": 1.053 },
+					{ "time": 0.6667 },
+					{ "time": 1, "x": 1.053 },
+					{ "time": 1.3333 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667, "curve": "stepped" },
+					{ "time": 1.3333 }
+				]
+			},
+			"Fx2": {
+				"rotate": [
+					{},
+					{ "time": 0.3333, "value": 87.22 },
+					{ "time": 0.6667, "value": 180.56 },
+					{ "time": 1, "value": 268.79 },
+					{ "time": 1.3333, "value": 357.4 }
+				],
+				"translate": [
+					{},
+					{ "time": 0.3333, "x": 4.03 },
+					{ "time": 0.6667, "x": 0.4, "y": 3.33 },
+					{ "time": 1, "x": -3.84, "y": 1.51 },
+					{ "time": 1.3333, "x": 0.7, "y": 0.3 }
+				],
+				"scale": [
+					{},
+					{ "time": 0.3333, "x": 0.662 },
+					{ "time": 0.6667, "x": 0.973 },
+					{ "time": 1, "x": 0.604 },
+					{ "time": 1.3333, "x": 0.929 }
+				],
+				"shear": [
+					{}
+				]
+			},
+			"Tire2": {
+				"translate": [
+					{ "x": 12.78 }
+				]
+			}
+		}
+	},
+	"Car3_Idle": {
+		"slots": {
+			"Car1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Car2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Car3": {
+				"attachment": [
+					{ "name": "Car3" }
+				]
+			}
+		},
+		"bones": {
+			"Cars": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"translate": [
+					{},
+					{ "time": 0.3333, "y": -3.5 },
+					{ "time": 0.6667 }
+				],
+				"scale": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				]
+			},
+			"Shade": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"translate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"scale": [
+					{},
+					{ "time": 0.3333, "x": 1.069, "y": 1.069 },
+					{ "time": 0.6667 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				]
+			},
+			"Tire1": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"translate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"scale": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				]
+			},
+			"Fx": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"translate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"scale": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				]
+			},
+			"Fx2": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"translate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"scale": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				]
+			},
+			"Tire2": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"translate": [
+					{ "x": 16.06, "curve": "stepped" },
+					{ "time": 0.6667, "x": 16.06 }
+				],
+				"scale": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				]
+			}
+		}
+	},
+	"Car3_Move": {
+		"slots": {
+			"Car1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Car2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Car3": {
+				"attachment": [
+					{ "name": "Car3" }
+				]
+			}
+		},
+		"bones": {
+			"Fx": {
+				"rotate": [
+					{},
+					{ "time": 0.3333, "value": 87.22 },
+					{ "time": 0.6667, "value": 180.56 },
+					{ "time": 1, "value": 268.79 },
+					{ "time": 1.3333, "value": 357.4 }
+				],
+				"translate": [
+					{},
+					{ "time": 0.3333, "x": 4.03 },
+					{ "time": 0.6667, "x": 0.4, "y": 3.33 },
+					{ "time": 1, "x": -3.84, "y": 1.51 },
+					{ "time": 1.3333, "x": 0.7, "y": 0.3 }
+				],
+				"scale": [
+					{},
+					{ "time": 0.3333, "x": 0.662 },
+					{ "time": 0.6667, "x": 0.973 },
+					{ "time": 1, "x": 0.604 },
+					{ "time": 1.3333, "x": 0.929 }
+				],
+				"shear": [
+					{}
+				]
+			},
+			"Cars": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667, "curve": "stepped" },
+					{ "time": 1.3333 }
+				],
+				"translate": [
+					{},
+					{ "time": 0.3333, "y": -4.78 },
+					{ "time": 0.6667 },
+					{ "time": 1, "y": -4.78 },
+					{ "time": 1.3333 }
+				],
+				"scale": [
+					{},
+					{ "time": 0.3333, "y": 0.982 },
+					{ "time": 0.6667 },
+					{ "time": 1, "y": 0.982 },
+					{ "time": 1.3333 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667, "curve": "stepped" },
+					{ "time": 1.3333 }
+				]
+			},
+			"Shade": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667, "curve": "stepped" },
+					{ "time": 1.3333 }
+				],
+				"translate": [
+					{ "y": 3.49 },
+					{ "time": 0.3333, "y": -1.58 },
+					{ "time": 0.6667, "y": 3.49 },
+					{ "time": 1, "y": -1.58 },
+					{ "time": 1.3333, "y": 3.49 }
+				],
+				"scale": [
+					{},
+					{ "time": 0.3333, "x": 1.053 },
+					{ "time": 0.6667 },
+					{ "time": 1, "x": 1.053 },
+					{ "time": 1.3333 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667, "curve": "stepped" },
+					{ "time": 1.3333 }
+				]
+			},
+			"Fx2": {
+				"rotate": [
+					{},
+					{ "time": 0.3333, "value": 87.22 },
+					{ "time": 0.6667, "value": 180.56 },
+					{ "time": 1, "value": 268.79 },
+					{ "time": 1.3333, "value": 357.4 }
+				],
+				"translate": [
+					{},
+					{ "time": 0.3333, "x": 4.03 },
+					{ "time": 0.6667, "x": 0.4, "y": 3.33 },
+					{ "time": 1, "x": -3.84, "y": 1.51 },
+					{ "time": 1.3333, "x": 0.7, "y": 0.3 }
+				],
+				"scale": [
+					{},
+					{ "time": 0.3333, "x": 0.662 },
+					{ "time": 0.6667, "x": 0.973 },
+					{ "time": 1, "x": 0.604 },
+					{ "time": 1.3333, "x": 0.929 }
+				],
+				"shear": [
+					{}
+				]
+			},
+			"Tire2": {
+				"translate": [
+					{ "x": 15.36 }
+				]
+			}
+		}
+	},
+	"Car4_Idle": {
+		"slots": {
+			"Car1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Car2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Car3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Car4": {
+				"attachment": [
+					{ "name": "Car4" }
+				]
+			}
+		},
+		"bones": {
+			"Cars": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"translate": [
+					{},
+					{ "time": 0.3333, "y": -3.5 },
+					{ "time": 0.6667 }
+				],
+				"scale": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				]
+			},
+			"Shade": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"translate": [
+					{ "x": -10.55, "curve": "stepped" },
+					{ "time": 0.6667, "x": -10.55 }
+				],
+				"scale": [
+					{ "x": 0.854 },
+					{ "time": 0.3333, "x": 0.872, "y": 1.069 },
+					{ "time": 0.6667, "x": 0.854 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				]
+			},
+			"Tire1": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"translate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"scale": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				]
+			},
+			"Fx": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"translate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"scale": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				]
+			},
+			"Fx2": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"translate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"scale": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				]
+			},
+			"Tire2": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"translate": [
+					{ "x": -22.4, "curve": "stepped" },
+					{ "time": 0.6667, "x": -22.4 }
+				],
+				"scale": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				]
+			}
+		}
+	},
+	"Car4_Move": {
+		"slots": {
+			"Car1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Car2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Car3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Car4": {
+				"attachment": [
+					{ "name": "Car4" }
+				]
+			}
+		},
+		"bones": {
+			"Fx": {
+				"rotate": [
+					{},
+					{ "time": 0.3333, "value": 87.22 },
+					{ "time": 0.6667, "value": 180.56 },
+					{ "time": 1, "value": 268.79 },
+					{ "time": 1.3333, "value": 357.4 }
+				],
+				"translate": [
+					{},
+					{ "time": 0.3333, "x": 4.03 },
+					{ "time": 0.6667, "x": 0.4, "y": 3.33 },
+					{ "time": 1, "x": -3.84, "y": 1.51 },
+					{ "time": 1.3333, "x": 0.7, "y": 0.3 }
+				],
+				"scale": [
+					{},
+					{ "time": 0.3333, "x": 0.662 },
+					{ "time": 0.6667, "x": 0.973 },
+					{ "time": 1, "x": 0.604 },
+					{ "time": 1.3333, "x": 0.929 }
+				],
+				"shear": [
+					{}
+				]
+			},
+			"Cars": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667, "curve": "stepped" },
+					{ "time": 1.3333 }
+				],
+				"translate": [
+					{},
+					{ "time": 0.3333, "y": -4.78 },
+					{ "time": 0.6667 },
+					{ "time": 1, "y": -4.78 },
+					{ "time": 1.3333 }
+				],
+				"scale": [
+					{},
+					{ "time": 0.3333, "y": 0.982 },
+					{ "time": 0.6667 },
+					{ "time": 1, "y": 0.982 },
+					{ "time": 1.3333 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667, "curve": "stepped" },
+					{ "time": 1.3333 }
+				]
+			},
+			"Shade": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.3333, "curve": "stepped" },
+					{ "time": 0.6667, "curve": "stepped" },
+					{ "time": 1, "curve": "stepped" },
+					{ "time": 1.3333 }
+				],
+				"translate": [
+					{ "x": -11.68, "y": 3.49, "curve": "stepped" },
+					{ "time": 0.3333, "x": -11.68, "y": 3.49, "curve": "stepped" },
+					{ "time": 0.6667, "x": -11.68, "y": 3.49, "curve": "stepped" },
+					{ "time": 1, "x": -11.68, "y": 3.49, "curve": "stepped" },
+					{ "time": 1.3333, "x": -11.68, "y": 3.49 }
+				],
+				"scale": [
+					{ "x": 0.863 },
+					{ "time": 0.3333, "x": 0.91, "y": 1.215 },
+					{ "time": 0.6667, "x": 0.863 },
+					{ "time": 1, "x": 0.91, "y": 1.215 },
+					{ "time": 1.3333, "x": 0.863 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.3333, "curve": "stepped" },
+					{ "time": 0.6667, "curve": "stepped" },
+					{ "time": 1, "curve": "stepped" },
+					{ "time": 1.3333 }
+				]
+			},
+			"Fx2": {
+				"rotate": [
+					{},
+					{ "time": 0.3333, "value": 87.22 },
+					{ "time": 0.6667, "value": 180.56 },
+					{ "time": 1, "value": 268.79 },
+					{ "time": 1.3333, "value": 357.4 }
+				],
+				"translate": [
+					{},
+					{ "time": 0.3333, "x": 4.03 },
+					{ "time": 0.6667, "x": 0.4, "y": 3.33 },
+					{ "time": 1, "x": -3.84, "y": 1.51 },
+					{ "time": 1.3333, "x": 0.7, "y": 0.3 }
+				],
+				"scale": [
+					{},
+					{ "time": 0.3333, "x": 0.662 },
+					{ "time": 0.6667, "x": 0.973 },
+					{ "time": 1, "x": 0.604 },
+					{ "time": 1.3333, "x": 0.929 }
+				],
+				"shear": [
+					{}
+				]
+			},
+			"Tire2": {
+				"translate": [
+					{ "x": -21.7 }
+				]
+			}
+		}
+	},
+	"Car5_Idle": {
+		"slots": {
+			"Car1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Car2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Car3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Car4": {
+				"attachment": [
+					{}
+				]
+			},
+			"Car5": {
+				"attachment": [
+					{ "name": "Car5" }
+				]
+			}
+		},
+		"bones": {
+			"Cars": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"translate": [
+					{},
+					{ "time": 0.3333, "y": -3.5 },
+					{ "time": 0.6667 }
+				],
+				"scale": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				]
+			},
+			"Shade": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"translate": [
+					{ "x": 3.55, "y": 5.52, "curve": "stepped" },
+					{ "time": 0.6667, "x": 3.55, "y": 5.52 }
+				],
+				"scale": [
+					{ "x": 1.066, "y": 1.249 },
+					{ "time": 0.3333, "x": 1.11, "y": 1.36 },
+					{ "time": 0.6667, "x": 1.066, "y": 1.249 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				]
+			},
+			"Tire1": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"translate": [
+					{ "x": 2.85, "curve": "stepped" },
+					{ "time": 0.6667, "x": 2.85 }
+				],
+				"scale": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				]
+			},
+			"Fx": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"translate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"scale": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				]
+			},
+			"Fx2": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"translate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"scale": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				]
+			},
+			"Tire2": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"translate": [
+					{ "x": 3.22, "curve": "stepped" },
+					{ "time": 0.6667, "x": 3.22 }
+				],
+				"scale": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				]
+			}
+		}
+	},
+	"Car5_Move": {
+		"slots": {
+			"Car1": {
+				"attachment": [
+					{}
+				]
+			},
+			"Car2": {
+				"attachment": [
+					{}
+				]
+			},
+			"Car3": {
+				"attachment": [
+					{}
+				]
+			},
+			"Car4": {
+				"attachment": [
+					{}
+				]
+			},
+			"Car5": {
+				"attachment": [
+					{ "name": "Car5" }
+				]
+			}
+		},
+		"bones": {
+			"Fx": {
+				"rotate": [
+					{},
+					{ "time": 0.3333, "value": 87.22 },
+					{ "time": 0.6667, "value": 180.56 },
+					{ "time": 1, "value": 268.79 },
+					{ "time": 1.3333, "value": 357.4 }
+				],
+				"translate": [
+					{},
+					{ "time": 0.3333, "x": 4.03 },
+					{ "time": 0.6667, "x": 0.4, "y": 3.33 },
+					{ "time": 1, "x": -3.84, "y": 1.51 },
+					{ "time": 1.3333, "x": 0.7, "y": 0.3 }
+				],
+				"scale": [
+					{},
+					{ "time": 0.3333, "x": 0.662 },
+					{ "time": 0.6667, "x": 0.973 },
+					{ "time": 1, "x": 0.604 },
+					{ "time": 1.3333, "x": 0.929 }
+				],
+				"shear": [
+					{}
+				]
+			},
+			"Cars": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667, "curve": "stepped" },
+					{ "time": 1.3333 }
+				],
+				"translate": [
+					{},
+					{ "time": 0.3333, "y": -4.78 },
+					{ "time": 0.6667 },
+					{ "time": 1, "y": -4.78 },
+					{ "time": 1.3333 }
+				],
+				"scale": [
+					{},
+					{ "time": 0.3333, "y": 0.982 },
+					{ "time": 0.6667 },
+					{ "time": 1, "y": 0.982 },
+					{ "time": 1.3333 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667, "curve": "stepped" },
+					{ "time": 1.3333 }
+				]
+			},
+			"Shade": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.3333, "curve": "stepped" },
+					{ "time": 0.6667, "curve": "stepped" },
+					{ "time": 1, "curve": "stepped" },
+					{ "time": 1.3333 }
+				],
+				"translate": [
+					{ "x": -2.24, "y": 1.46, "curve": "stepped" },
+					{ "time": 0.3333, "x": -2.24, "y": 1.46, "curve": "stepped" },
+					{ "time": 0.6667, "x": -2.24, "y": 1.46, "curve": "stepped" },
+					{ "time": 1, "x": -2.24, "y": 1.46, "curve": "stepped" },
+					{ "time": 1.3333, "x": -2.24, "y": 1.46 }
+				],
+				"scale": [
+					{ "x": 1.055 },
+					{ "time": 0.3333, "x": 1.083, "y": 1.2 },
+					{ "time": 0.6667, "x": 1.055 },
+					{ "time": 1, "x": 1.083, "y": 1.2 },
+					{ "time": 1.3333, "x": 1.055 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.3333, "curve": "stepped" },
+					{ "time": 0.6667, "curve": "stepped" },
+					{ "time": 1, "curve": "stepped" },
+					{ "time": 1.3333 }
+				]
+			},
+			"Fx2": {
+				"rotate": [
+					{},
+					{ "time": 0.3333, "value": 87.22 },
+					{ "time": 0.6667, "value": 180.56 },
+					{ "time": 1, "value": 268.79 },
+					{ "time": 1.3333, "value": 357.4 }
+				],
+				"translate": [
+					{},
+					{ "time": 0.3333, "x": 4.03 },
+					{ "time": 0.6667, "x": 0.4, "y": 3.33 },
+					{ "time": 1, "x": -3.84, "y": 1.51 },
+					{ "time": 1.3333, "x": 0.7, "y": 0.3 }
+				],
+				"scale": [
+					{},
+					{ "time": 0.3333, "x": 0.662 },
+					{ "time": 0.6667, "x": 0.973 },
+					{ "time": 1, "x": 0.604 },
+					{ "time": 1.3333, "x": 0.929 }
+				],
+				"shear": [
+					{}
+				]
+			},
+			"Tire2": {
+				"translate": [
+					{ "x": 3.31 }
+				]
+			},
+			"Tire1": {
+				"translate": [
+					{ "x": 3.51 }
+				]
+			}
+		}
+	}
+}
+}
