@@ -97,8 +97,10 @@ export function fmt(a: Big): string {
   const neg = a.m < 0;
   const abs = { m: Math.abs(a.m), e: a.e };
   if (abs.e < 3) {
-    const n = toNumber(abs);
-    const s = n < 10 && n % 1 !== 0 ? n.toFixed(1) : Math.floor(n).toString();
+    // +1e-9: absorve resíduo de ponto flutuante (ex.: 499.9999999 de uma subtração) sem
+    // arredondar para cima valores reais — a HUD nunca mostra mais do que o jogador tem.
+    const n = toNumber(abs) + 1e-9;
+    const s = n < 10 && n % 1 > 1e-6 ? (Math.floor(n * 10) / 10).toFixed(1) : Math.floor(n).toString();
     return (neg ? '-' : '') + s;
   }
   let idx = Math.floor(abs.e / 3);

@@ -30,9 +30,16 @@ export const BALANCE = {
   cashierUpgGrowth: 3.1,
   cashierMaxLevel: 6,
 
+  // ---- CLIENTES (drive-thru) ----
+  // A receita SÓ entra quando um cliente paga no guichê do caixa (arte "DRIVE THRU").
+  // Segundos entre pagamentos por nível de caixa (1..6): caixa melhor atende mais rápido.
+  // ticket (valor pago por cliente) = incomePerSec * serviceSeconds  =>  média = incomePerSec.
+  serviceSeconds: [4.0, 3.5, 3.0, 2.6, 2.3, 2.0], // índice = nível-1
+
   // ---- OFFLINE ----
   offlineCapSeconds: 2 * 3600, // limite inicial de 2h
-  offlineEfficiency: 0.5, // offline rende 50% da receita ativa
+  offlineEfficiency: 0.5, // offline: metade dos clientes que viriam no ritmo ativo
+  offlineMinSeconds: 30, // ausências menores não geram ganhos nem popup
 
   // ---- SAVE ----
   saveKey: 'sushiventure.save.v1',

@@ -5,9 +5,9 @@
 ## Camadas (separação de responsabilidades)
 
 1. **Núcleo (`src/core/`)** — puro, sem dependência visual, 100% testável:
-   - `big.ts` números grandes · `balance.ts` parâmetros · `economy.ts` estado+operações atômicas+offline · `save.ts` serialização/migração.
+   - `big.ts` números grandes · `balance.ts` parâmetros · `economy.ts` estado+operações atômicas+venda+offline · `drivethru.ts` simulação da fila de clientes (carros) · `save.ts` serialização/migração.
 2. **Apresentação (`src/game/`)** — Phaser:
-   - `BootScene` carrega `manifest.json` e cria animações; `TowerScene` renderiza torre/HUD/interação; `model.ts` é a ponte observável entre núcleo e cena.
+   - `BootScene` carrega `manifest.json` e cria animações; `layout.ts` concentra todas as medições da arte (posições/escala); `TowerScene` renderiza torre/drive-thru/HUD/interação; `model.ts` é a ponte observável entre núcleo e cena (compras, venda, suspend/resume, persist).
 3. **Persistência** — `save.ts` (localStorage agora; interface `SaveRepository` p/ nuvem depois).
 4. **Serviços** — adaptadores (`AuthProvider`, `RewardedAdProvider`, `PaymentProvider`, …) definidos na Constituição; implementações reais só com credenciais; dev = simulados rotulados.
 
@@ -17,11 +17,13 @@
 
 ## Fluxo de dados
 
-Evento de toque → `GameModel.buyX()` (núcleo atômico) → `emit()` → `TowerScene` reconstrói torre/HUD → autosave periódico + `beforehide`.
+- **Venda:** `DriveThru.update(dt, serviceSeconds)` devolve os carros que pagaram neste quadro → para cada um `GameModel.sell()` → `sellToCustomer()` (núcleo) → "+$" na tela.
+- **Compra:** soltar o dedo num botão (sem arraste) → `GameModel.buyX()` (núcleo atômico) → persist + `emit()` → `TowerScene` atualiza **incrementalmente** (troca textura/cria só o andar novo) → HUD.
+- **Persistência:** autosave a cada 3 s, após cada compra, ao ocultar a aba (`suspend`) e no `pagehide`.
 
 ## Simulação de tempo
 
-Economia por `tick(dt)` acumulado (não por frame fixo); funciona em aba lenta/segundo plano; offline via `applyOffline`.
+Não existe mais renda passiva por quadro (`tick` removido). No jogo ativo o tempo só avança a fila do drive-thru (delta limitado a 0,25 s). Em segundo plano a simulação pausa e o período é creditado por `applyOffline` (em clientes) ao voltar — nunca os dois para o mesmo intervalo.
 
 ## Performance (plano)
 

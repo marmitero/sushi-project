@@ -15,6 +15,9 @@
     "test:watch": "vitest"
   },
   "dependencies": {
+    "@fontsource/bebas-neue": "^5.3.0",
+    "@fontsource/lilita-one": "^5.3.0",
+    "@fontsource/passion-one": "^5.3.0",
     "phaser": "^3.85.2"
   },
   "devDependencies": {

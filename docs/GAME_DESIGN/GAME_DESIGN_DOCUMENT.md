@@ -16,23 +16,23 @@ Visual (torre central) · Progressão (sempre um próximo objetivo) · Automaç�
 
 ## 4. Loop principal
 
-1. Restaurante gera receita → 2. dinheiro acumula → 3. jogador investe (andar novo / upgrade de andar / caixa) → 4. receita sobe → 5. desbloqueia mais andares → 6. contrata/melhora equipe → 7. receitas/reputação/missões → 8. cidade satura → 9. renasce → 10. Pontos de Sucesso → bônus permanentes → nova cidade.
+1. Clientes chegam de carro ao drive-thru e **pagam no guichê** (única fonte de dinheiro no jogo ativo; ver ECONOMY.md §2.1) → 2. dinheiro acumula → 3. jogador investe (andar novo / upgrade de andar / caixa) → 4. receita sobe → 5. desbloqueia mais andares → 6. contrata/melhora equipe → 7. receitas/reputação/missões → 8. cidade satura → 9. renasce → 10. Pontos de Sucesso → bônus permanentes → nova cidade.
 
 ## 5. Tela principal (Torre)
 
-Composição vertical: fundo urbano + nuvens (parallax) → térreo/caixa com logo → andares empilhados → elevador à esquerda → personagens animados → carro de entrega na rua. HUD no topo (dinheiro, +/s) e botões de ação. Scroll vertical p/ ver andares altos.
+Composição vertical: fundo urbano + nuvens (parallax) → térreo/caixa com logo e guichê → andares empilhados → elevador à esquerda → personagens animados → fila de carros (clientes) na rua. HUD no topo: dinheiro, `N clientes/min × $ticket`, `Atendidos: X · ≈ $Y/s`. Botão de melhoria do caixa fixo embaixo; botões de andar no telhado de cada andar. Scroll vertical (arrastar/roda) p/ ver andares altos.
 
 ## 6. Entidades jogáveis (MVP)
 
 - **Andar superior:** nível 1..10 (arte Lv1..10), gera receita base × multiplicadores. Upgrade troca o sprite.
 - **Próximo andar:** representado por `Floor_Lv0` (trancado) com botão de desbloqueio.
-- **Caixa (térreo):** nível 1..6 (arte CashierL1..6), multiplicador global.
+- **Caixa (térreo):** nível 1..6 (arte CashierL1..6): multiplicador global **e** atendimento mais rápido (4,0 s → 2,0 s por cliente).
 - **Equipe (visual no MVP):** Cashier Girl, Chef (cooking), Floor Girl, Lift Guy. Efeitos econômicos de equipe entram na FASE 3.
-- **Entregas:** carro na rua (visual no MVP; economia de entregas na FASE 3).
+- **Clientes do drive-thru:** os 5 carros do kit entram pela direita, fazem fila (até 4), param no guichê, pagam o ticket e saem pela esquerda. Cada pagamento = 1 venda (`sellToCustomer`). Ticket cresce com andares/caixa; vazão cresce com o caixa.
 
 ## 7. Controles
 
-Toque/arraste: arrastar = rolar a torre; tocar em botões/setas = comprar. Sem hover-dependente. Áreas de toque ≥ 44px efetivas.
+Toque/arraste: arrastar (> 12 px) = rolar a torre; tocar e **soltar** em botões = comprar (um arraste que começa sobre um botão não compra). Roda do mouse rola no desktop. Compra sem saldo mostra "Faltam $X". Sem hover-dependente. Áreas de toque ≥ 44px efetivas.
 
 ## 8. Fora do escopo do MVP (mas planejado)
 

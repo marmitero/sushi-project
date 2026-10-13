@@ -8,34 +8,35 @@
     />
     <meta name="theme-color" content="#0e2a3f" />
     <title>Sushiventure Idle Tycoon</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lilita+One&family=Passion+One:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Fontes do kit (Lilita One, Passion One, Bebas Neue) são empacotadas localmente
+         via @fontsource (OFL-1.1) e importadas em src/main.ts: funciona offline. -->
     <style>
       html,
       body {
         margin: 0;
         padding: 0;
+        width: 100%;
         height: 100%;
         background: #0e2a3f;
         overflow: hidden;
         -webkit-tap-highlight-color: transparent;
       }
+      /* Ocupa a janela inteira. A centralização do canvas é feita SOMENTE pelo Phaser
+         (scale.autoCenter = CENTER_BOTH, que aplica margin-left/top no canvas).
+         Não usar flex/grid de centralização aqui: somaria com a margem do Phaser e
+         deslocaria o canvas (bug "fora de centro" corrigido em 2026-10-12). */
       #game {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        position: fixed;
+        inset: 0;
+        overflow: hidden;
       }
       canvas {
+        display: block;
         touch-action: none;
       }
     </style>
-    <script type="module" crossorigin src="/assets/index-BY4cgxw7.js"></script>
+    <script type="module" crossorigin src="/assets/index-8P2EV6Pp.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-MKsh86Uv.css">
   </head>
   <body>
     <div id="game"></div>

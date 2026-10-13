@@ -1,41 +1,50 @@
 # AI_STATE — Sushiventure Idle Tycoon
 
-**Atualizado:** 2026-10-12 · **Fase atual:** 1/2 (MVP jogável) — FASE 0 concluída
-**Branch:** `arena/71ec9a3a-sushi-project` · **Último commit:** `bf8b78b`
-**Push:** ✅ `origin/arena/71ec9a3a-sushi-project` em 2026-10-12
+**Atualizado:** 2026-10-12 · **Fase atual:** 1/2 (MVP jogável) — correções do 1º teste manual do diretor
+**Branch:** `arena/71ec9a3a-sushi-project` · **Base desta etapa:** `6585f25` · **Commit desta etapa:** ver CHANGELOG / `git log`
+**Push:** `origin/arena/71ec9a3a-sushi-project`
+
+Estados usados (Constituição): Planejado · Em desenvolvimento · Implementado · Testado · Validado · Bloqueado · Publicado.
 
 ## Status dos sistemas
 
 | Sistema | Estado |
 |---|---|
-| Auditoria de assets | ✅ Validado |
-| Arquitetura/ADR-0001 | ✅ Validado |
-| Núcleo econômico (Big/atomicidade/offline) | ✅ Implementado + Testado (15/15) |
-| Cena da torre + HUD + assets reais | ✅ Implementado |
-| Compras (andar/upgrade/caixa) | ✅ Implementado + Testado |
-| Persistência local + offline | ✅ Implementado + Testado |
-| Versão portátil Windows (JOGAR.bat + PowerShell) | ✅ Implementado + Verificado |
-| Funcionários c/ efeito econômico | ⏳ FASE 3 |
-| Elevador/entregas como sistema | ⏳ FASE 3 |
-| Configurações/acessibilidade | ⏳ FASE 4 |
-| Receitas/reputação/missões | ⏳ FASE 5 |
-| Cidades/renascimento/PS | ⏳ FASE 6 |
-| Eventos/boosts | ⏳ FASE 7 |
-| Contas/nuvem | ⏳ FASE 8 |
-| Monetização real | ⏳ FASE 9 (bloqueado por credenciais) |
+| Auditoria de assets (FASE 0) | Validado |
+| Arquitetura / ADR-0001 (Phaser 3 + TS + Vite) | Validado |
+| Núcleo econômico (Big, atomicidade, compras) | Testado (31/31) |
+| Receita **somente por cliente** (drive-thru → `sellToCustomer`) | Testado (unitário + navegador) — aguarda validação do diretor |
+| Simulação do drive-thru (`src/core/drivethru.ts`) | Testado (8 testes) |
+| Ganhos offline em clientes + aba oculta (`suspend/resume`, `pagehide`) | Testado |
+| Save v2 + migração v1→v2 | Testado |
+| Cena da torre: centralização, escala única, nada cortado | Testado (headless: celular, desktop, Full HD) — aguarda validação do diretor |
+| Carros no sentido da arte (direita → esquerda) | Testado — aguarda validação do diretor |
+| Rolagem (arraste + roda do mouse), compra só ao soltar | Testado |
+| Fontes empacotadas (OFL) | Testado |
+| Versão portátil Windows (JOGAR.bat + PowerShell) | Validado (abre no Windows, confirmado pelo diretor); rebuild desta etapa Testado |
+| Funcionários com efeito econômico | Planejado (FASE 3) |
+| Elevador/entregas como sistema | Planejado (FASE 3) |
+| Configurações / acessibilidade / créditos | Planejado (FASE 4) |
+| Receitas / reputação / missões | Planejado (FASE 5) |
+| Cidades / renascimento / Pontos de Sucesso | Planejado (FASE 6) |
+| Eventos / boosts | Planejado (FASE 7) |
+| Contas / nuvem | Planejado (FASE 8) |
+| Monetização real | Bloqueado (FASE 9 — exige credenciais do diretor) |
 
 ## Verificações desta etapa
 
-- `npx vitest run` → 15/15 passam.
 - `npx tsc --noEmit` → limpo.
-- `npm run build` → ok (dist ~13 MB).
-- Dev server → HTTP 200; `/assets/manifest.json` 200; módulos Phaser transformados; host do preview liberado (`allowedHosts:true`).
+- `npx vitest run` → 31/31 (23 núcleo + 8 drive-thru).
+- Chromium headless: canvas centralizado em 1366×768 (`left=467`), 1920×1080 (`left=656`), 412×915 (`top=91`); vendas 15→19→…→35 após 5 clientes; arrastar sobre botão não compra; recusa "Faltam $57"; caixa Nv2 (4,0→3,5 s); offline 45 min = 450 clientes; 3 h limitado a 2 h; rolagem até o topo com 7 andares.
+- `npm run build:portable` → ok; `portable/www` servido estaticamente, todos os assets/fontes 200, sem erros; gancho de dev ausente no bundle.
 
 ## Problemas conhecidos
 
 - Personagens em resolução nativa baixa (limitar upscale ou regenerar do vetor).
-- Sem atlas de UI (draw calls) — otimizar na FASE 10.
-- Fontes via CDN — empacotar p/ Android na FASE 11.
+- `BootScene` pré-carrega o kit inteiro (inclusive telas futuras) — carregar por tela na FASE 10.
+- Bundle JS ~1,5 MB (Phaser) — aviso de chunk do Vite; dividir na FASE 10.
+- Sem atlas de UI (draw calls) — FASE 10.
+- Relógio do dispositivo não é confiável para offline em modo 100% local (documentado; validação só com backend).
 
 ## Integrações pendentes (exigem diretor)
 
@@ -43,10 +52,11 @@ Play Console, AdMob, Play Billing, backend/nuvem. Nenhuma declarada como funcion
 
 ## Próximas tarefas (prioridade)
 
-1. FASE 3: funcionários com efeito mensurável + elevador/entregas reais.
-2. FASE 4: configurações (reduzir movimento, reset de save) + qualidade de vida.
-3. Atlas de UI + pooling (perf).
+1. Diretor: testar de novo com `portable/JOGAR.bat` e validar as 4 correções (centro, cortes, carros, dinheiro por cliente).
+2. FASE 3: funcionários com efeito mensurável + elevador/entregas reais (a venda no guichê continua sendo a entrada de dinheiro).
+3. FASE 4: configurações (reduzir movimento, reset de save, créditos CraftPix/fontes) + estados "pressed" dos botões do kit.
+4. Perf: carregamento por tela, atlas de UI, divisão do bundle.
 
 ## Como continuar
 
-`npm run dev` · docs em `docs/` · constituição `docs/master-prompt.md` · testes `npm run test`.
+`npm ci && npm run dev` · docs em `docs/` · constituição `docs/master-prompt.md` · testes `npm run test` · medições de layout em `src/game/layout.ts` + PROJECT_AUDIT.md §9 · estado do jogo no console (dev): `__game.scene.getScene('Tower').model.state`.

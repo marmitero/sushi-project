@@ -11,19 +11,31 @@ O QUE ACONTECE:
   - O JOGAR.bat usa o PowerShell que já vem no Windows para servir a pasta
     www/ (o jogo já compilado, com todos os assets) em http://localhost.
   - Nenhuma dependência, Node ou internet são necessários para rodar
-    (apenas para carregar as fontes do Google na primeira vez).
+    (as fontes do jogo já vêm incluídas; licenças em www/licenses/fonts/).
 
 SE A PORTA 8080 ESTIVER EM USO:
   - O servidor tenta automaticamente portas 8080..8090 e abre a correta.
 
 TESTES MANUAIS SUGERIDOS:
-  - Veja a torre com o térreo/caixa (logo SUSHI TOWER) e 1 andar.
-  - Toque em "Novo andar" para desbloquear (desconta dinheiro e sobe a torre).
-  - Toque na seta de um andar para melhorá-lo (troca o sprite Lv1..Lv10).
-  - Toque no botão laranja "Caixa L2.." para melhorar o caixa (troca o storefront).
-  - Arraste para cima/baixo para rolar a torre.
+  - A torre deve aparecer CENTRALIZADA na janela, sem nada cortado
+    (em monitor deitado sobram faixas escuras dos lados: é o formato retrato).
+  - Os carros são os clientes: entram pela DIREITA, andam de frente para a
+    ESQUERDA, param na janela "CASHIER", pagam e vão embora pela esquerda.
+  - O dinheiro só aumenta quando um carro paga: aparece "+$valor" sobre o
+    guichê e uma moeda voa até o contador. Sem carro no guichê, nada entra.
+  - A HUD mostra "N clientes/min x $ticket" e quantos clientes já foram atendidos.
+  - Botão laranja no telhado de um andar (seta + preço): melhora o andar
+    (troca a arte Lv1..Lv10) e aumenta o valor pago por cliente.
+  - "CONSTRUIR ANDAR" (verde, no andar fechado do topo): desbloqueia um andar.
+  - "MELHORAR CAIXA" (embaixo): troca a fachada e atende mais rápido.
+  - Sem dinheiro suficiente, o botão mostra quanto falta ("Faltam $X").
+  - Arraste para cima/baixo (ou use a roda do mouse) para rolar a torre.
+    Arrastar começando em cima de um botão NÃO compra nada.
   - Recarregue a página: o progresso deve ser preservado (save local).
-  - Feche e reabra depois: popup de ganhos offline aparece uma única vez.
+  - Feche e reabra depois de 1 minuto ou mais (ou troque de aba por mais de
+    30 s e volte): aparece o popup "BEM-VINDO DE VOLTA!" com os clientes
+    atendidos enquanto você esteve fora (50% do ritmo, no máximo 2 h).
+    O valor entra no contador ao clicar em COLETAR e é pago uma única vez.
 
 PROBLEMAS COMUNS:
   - Se o Windows avisar sobre o script, permita a execução (é um servidor local).

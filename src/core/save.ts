@@ -2,14 +2,17 @@ import { BALANCE as B } from './balance';
 import { Big, big } from './big';
 import { GameState, SAVE_VERSION, initialState } from './economy';
 
-/** Serializa o estado p/ JSON seguro (Big como {m,e}). */
-export function serialize(s: GameState): string {
-  return JSON.stringify({ ...s, lastSaved: Date.now() });
+/**
+ * Serializa o estado p/ JSON seguro (Big como {m,e}).
+ * `savedAt` = instante que conta como "último momento jogado" (base do offline).
+ */
+export function serialize(s: GameState, savedAt: number = Date.now()): string {
+  return JSON.stringify({ ...s, lastSaved: savedAt });
 }
 
-export function save(s: GameState, storage: Storage = localStorage): void {
+export function save(s: GameState, storage: Storage = localStorage, savedAt: number = Date.now()): void {
   try {
-    storage.setItem(B.saveKey, serialize(s));
+    storage.setItem(B.saveKey, serialize(s, savedAt));
   } catch {
     // storage cheio/indisponível — falha silenciosa mas não quebra o jogo.
   }
@@ -32,7 +35,10 @@ export function load(storage: Storage = localStorage): GameState | null {
   }
 }
 
-/** Migrações por versão. v1 = atual. */
+/**
+ * Migrações por versão.
+ * v1 → v2: adiciona `customersServed` (default 0). Demais campos inalterados.
+ */
 export function migrate(data: Partial<GameState> & { version?: number }): GameState | null {
   const v = data.version ?? 0;
   if (v > SAVE_VERSION) return null; // save do futuro: ignora com segurança
@@ -43,13 +49,19 @@ export function migrate(data: Partial<GameState> & { version?: number }): GameSt
   if (floors.length === 0) floors.push(1);
   const state: GameState = {
     version: SAVE_VERSION,
-    money: toBig(data.money, base.money),
+    money: nonNegative(toBig(data.money, base.money), base.money),
     floors,
     cashierLevel: clampInt(data.cashierLevel, 1, B.cashierMaxLevel),
-    lastSaved: typeof data.lastSaved === 'number' ? data.lastSaved : Date.now(),
-    totalEarned: toBig(data.totalEarned, big(0)),
+    lastSaved: typeof data.lastSaved === 'number' && isFinite(data.lastSaved) ? data.lastSaved : Date.now(),
+    totalEarned: nonNegative(toBig(data.totalEarned, big(0)), big(0)),
+    customersServed: clampInt(data.customersServed ?? 0, 0, Number.MAX_SAFE_INTEGER),
   };
   return state;
+}
+
+/** Saldo nunca negativo vindo de save adulterado/corrompido. */
+function nonNegative(v: Big, fallback: Big): Big {
+  return v.m < 0 ? fallback : v;
 }
 
 function clampInt(v: unknown, lo: number, hi: number): number {
